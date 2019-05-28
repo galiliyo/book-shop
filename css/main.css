@@ -1,0 +1,22 @@
+.delete-btn {
+  cursor: pointer;
+}
+
+.card img {
+  width: 100px;
+  margin: 12px auto 6px auto;
+}
+.card {
+  margin-bottom: 12px;
+}
+.card-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.book-title a:hover {
+  cursor: pointer;
+  color: light-blue;
+}
+
