@@ -10,8 +10,8 @@ function getBooks() {
   return books
 }
 
-function getAllBooks(){
-    return gBooks
+function getAllBooks() {
+  return gBooks
 }
 
 function createBooks() {
@@ -25,7 +25,12 @@ function createBooks() {
     createbook('Moby Dick', 'Herman Melville', '15.99', 4),
     createbook('The Odyssey', 'Homer', '15.99', 4),
     createbook('Hamlet', 'William Shakespeare', '15.99', 4),
-    createbook('One Hundred Years of Solitude', 'Gabriel Garcia Marquez', '15.99', 4),
+    createbook(
+      'One Hundred Years of Solitude',
+      'Gabriel Garcia Marquez',
+      '15.99',
+      4
+    ),
     createbook('The Divine Comedy', ' Dante Alighieri', '15.99', 4),
     createbook('The Brothers Karamazov ', ' Fyodor Dostoyevsky', '15.99', 4),
     createbook('Madame Bovary', 'Gustave Flaubert', '15.99', 4),
@@ -72,21 +77,23 @@ function getbookById(bookId) {
   return book
 }
 
-function updatebook(bookId, title, author, imgUrl) {
-  var bookIdx = gBooks.findIndex(function(book) {
-    return book.id === bookId
-  })
-  // gBooks[bookIdx].  = newSpeed;
+function updatebook(bookId, title, author, price, overview, imgUrl) {
+  var book = getbookById(bookId)
+
+  book.title = title
+  book.author = author
+  book.price = price
+  book.overview = overview
 }
 
 function nextPage() {
   currPageIdx++
 }
 
-function setCurrPageIdx(destinationPageIdx){
-    currPageIdx = destinationPageIdx
+function setCurrPageIdx(destinationPageIdx) {
+  currPageIdx = destinationPageIdx
 }
 
-function getCurrPageIdx(){
-    return currPageIdx
+function getCurrPageIdx() {
+  return currPageIdx
 }

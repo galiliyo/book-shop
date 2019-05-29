@@ -58,7 +58,15 @@ function onCloseModal() {
 }
 
 function onSaveEditedBook(el) {
-  console.log(el)
+  let imgUrl
+  let bookId = $('.modal').data('id')
+  let title = $('.modal #book-title').val()
+  let author = $('.modal #book-author').val()
+  let price = $('.modal #book-price').val()
+  let overview = $('.modal #book-overview').val()
+  debugger
+  updatebook(bookId, title, author, price, overview, imgUrl)
+  renderBooks()
 }
 
 function onDeletebook(e) {
@@ -71,11 +79,11 @@ function onDeletebook(e) {
 function onEditBook() {
   let bookId = $(this).data().id
   let currBook = getbookById(bookId)
-  console.log(currBook)
   $('.modal #book-title').val(currBook.title)
   $('.modal #book-author').val(currBook.author)
   $('.modal #book-price').val(currBook.price)
   $('.modal #book-overview').val(currBook.overview)
+  $('.modal').attr('data-id', currBook.id)
 }
 
 function onAddBook() {
@@ -118,10 +126,10 @@ function renderPagination() {
     </a>
     </li> \n`
   for (let i = 0; i < numberOfPages; i++) {
-      let strClass = (i===currPageIdx) ? 'active' : ''
-    strHtmls +=
-    `<li class="page-item ${strClass}">
-        <a class="page-link" data-page="${i}" onclick="onChangePage($(this).data('page'))">${i+1}</a>
+    let strClass = i === currPageIdx ? 'active' : ''
+    strHtmls += `<li class="page-item ${strClass}">
+        <a class="page-link" data-page="${i}" onclick="onChangePage($(this).data('page'))">${i +
+      1}</a>
      </li>`
   }
 

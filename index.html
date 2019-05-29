@@ -104,7 +104,7 @@
     </nav>
     <!-- Edit Modal -->
 
-    <div class="modal fade" id="editBookModal" tabindex="-1" role="dialog">
+    <div class="modal fade" data-id="" id="editBookModal" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -121,14 +121,16 @@
           <div class="modal-body d-flex flex-column">
             <form>
               <div class="modal-top row">
-                  <div class="img  mt-2 mx-auto"><img src="./img/default-book.png" alt="" width="120px"></div>
+                <div class="img  mt-2 mx-auto">
+                  <img src="./img/default-book.png" alt="" width="120px" />
+                </div>
                 <div class="form-group col-8">
                   <label for="book-title" class="col-form-label">Title:</label>
                   <input type="text" class="form-control" id="book-title" />
                   <label for="book-author" class="col-form-label"
                     >Author:</label
                   >
-                  <input type="text" class="form-control" id="book-price" />
+                  <input type="text" class="form-control" id="book-author" />
                   <label for="book-price" class="col-form-label">Price:</label>
                   <div class="input-group mb-3">
                     <div class="input-group-prepend">
@@ -138,7 +140,7 @@
                     </div>
                   </div>
                 </div>
-            </div>
+              </div>
               <div class="form-group">
                 <label for="message-text" class="col-form-label"
                   >Overview:</label
@@ -158,6 +160,7 @@
             <button
               type="button"
               class="btn btn-primary"
+              data-dismiss="modal"
               onclick="onSaveEditedBook(this)"
             >
               Save
