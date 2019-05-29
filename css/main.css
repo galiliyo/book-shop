@@ -1,3 +1,7 @@
+body{
+  height: 100vh;
+}
+
 .delete-btn {
   cursor: pointer;
 }
@@ -15,6 +19,10 @@
   align-items: flex-end;
 }
 
+.book-title{
+  height: 2em;
+}
+
 .book-title a:hover {
   cursor: pointer;
   color: light-blue;
@@ -27,4 +35,20 @@
   border-radius: 100px;
   bottom:80px;
   right:80px
+}
+
+
+
+.dropdown-menu{
+  /* right: 0; */
+  left:initial;
+  width: 100px
+}
+
+.page-pagination{
+
+  position: absolute;
+  bottom: 30px;
+  right: 50%;
+  transform: translateX(-50%)
 }
