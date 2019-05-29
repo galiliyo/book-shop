@@ -23,7 +23,7 @@ function createBooks() {
     gBooks = books;
 }
 
-function createbook(title, author, price, overview, imgUrl = '../book-shop/img/default-book.png') {
+function createbook(title, author, price, overview, imgUrl = './img/default-book.png') {
     return {
         id: makeId(),
         title,
