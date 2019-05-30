@@ -1,192 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="./lib/start-rating-svg/star-rating-svg.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/main.css" />
     <title>book-shop</title>
-  </head>
+</head>
 
-  <body onload="onInit()">
+<body onload="onInit()">
     <!-- Image and text -->
     <nav class="navbar navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">
-        <img
-          src="/docs/4.3/assets/brand/bootstrap-solid.svg"
-          width="30"
-          height="30"
-          class="d-inline-block align-top"
-          alt=""
-        />
-        Book-Store
-      </a>
-      <div class="btn-group mr-5 flex-column align-items-end">
-        <button
-          type="button"
-          class="btn btn-light dropdown-toggle"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          Action
-        </button>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">English</a>
-          <a class="dropdown-item" href="#">Spanish</a>
-          <a class="dropdown-item" href="#">Hebrew</a>
+        <a class="navbar-brand" href="#">
+            <img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30"
+                class="d-inline-block align-top" alt="" />
+            Book-Store
+        </a>
+        <div class="btn-group mr-5 flex-column align-items-end">
+            <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                Action
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">English</a>
+                <a class="dropdown-item" href="#">Spanish</a>
+                <a class="dropdown-item" href="#">Hebrew</a>
+            </div>
         </div>
-      </div>
     </nav>
     <section class="container mt-5">
-      <button
-        type="button"
-        class="btn btn-primary btn-add position-fixed"
-        onclick="onAddBook()"
-      >
-        Add
-      </button>
-      <section class="table d-none">
-        <table class="table table-hover">
-          <thead class="thead-light">
-            <tr>
-              <th scope="col">#id</th>
-              <th scope="col">Image</th>
-              <th scope="col">Name</th>
-              <th scope="col">Author</th>
-              <th scope="col"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-      <section class="cards container"></section>
-    </section>
+        <button type="button" class="btn btn-primary btn-add position-fixed" onclick="onAddBook()">
+            Add
+        </button>
+        <section class="table d-none">
+            <table class="table table-hover">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">#id</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Author</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <div class="rating" data-id="11"></div>
+        <div class="rating" data-id="12"></div>
 
-    <nav aria-label="Page navigation" class="page-pagination">
-      <ul class="pagination">
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-            <span class="sr-only">Previous</span>
-          </a>
-        </li>
 
-        <!-- dynamically rendered pagination -->
+        <section class="cards container">b
+            <!-- dynamically rendered cards  -->
+        </section>
 
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-            <span class="sr-only">Next</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <!-- Edit Modal -->
+        <nav aria-label="Page navigation" class="page-pagination">
+            <ul class="pagination">
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
 
-    <div class="modal fade" data-id="" id="editBookModal" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="overview">Overview</h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body d-flex flex-column">
-            <form>
-              <div class="modal-top row">
-                <div class="img  mt-2 mx-auto">
-                  <img src="./img/default-book.png" alt="" width="120px" />
-                </div>
-                <div class="form-group col-8">
-                  <label for="book-title" class="col-form-label">Title:</label>
-                  <input type="text" class="form-control" id="book-title" />
-                  <label for="book-author" class="col-form-label"
-                    >Author:</label
-                  >
-                  <input type="text" class="form-control" id="book-author" />
-                  <label for="book-price" class="col-form-label">Price:</label>
-                  <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text" id="basic-addon">$</span>
+                <!-- dynamically rendered pagination -->
 
-                      <input type="text" class="form-control" id="book-price" />
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- Edit Modal -->
+
+        <div class="modal fade" data-id="" id="editBookModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="overview">Overview</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                  </div>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="message-text" class="col-form-label"
-                  >Overview:</label
-                >
-                <textarea class="form-control" id="book-overview"></textarea>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-dismiss="modal"
-            >
-              Close
-            </button>
-            <button
-              type="button"
-              class="btn btn-primary"
-              data-dismiss="modal"
-              onclick="onSaveEditedBook(this)"
-            >
-              Save
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+                    <div class="modal-body d-flex flex-column">
+                        <form>
+                            <div class="modal-top row">
+                                <div class="img  mt-2 mx-auto">
+                                    <img src="./img/default-book.png" alt="" width="120px" />
+                                </div>
+                                <div class="form-group col-8">
+                                    <label for="book-title" class="col-form-label">Title:</label>
+                                    <input type="text" class="form-control" id="book-title" />
+                                    <label for="book-author" class="col-form-label">Author:</label>
+                                    <input type="text" class="form-control" id="book-author" />
+                                    <label for="book-price" class="col-form-label">Price:</label>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon">$</span>
 
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-    ></script>
-    <script src="js/util-service.js"></script>
-    <script src="js/bookshop-service.js"></script>
-    <script src="js/bookshop-main.js"></script>
-  </body>
+                                            <input type="text" class="form-control" id="book-price" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="message-text" class="col-form-label">Overview:</label>
+                                <textarea class="form-control" id="book-overview"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                            Close
+                        </button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal"
+                            onclick="onSaveEditedBook(this)">
+                            Save
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+        </script>
+        <script src="/lib/start-rating-svg/jquery.star-rating-svg.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+        </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+        </script>
+        <script src="/js/star-rating.js"></script>
+        <script src="js/util-service.js"></script>
+        <script src="js/bookshop-service.js"></script>
+        <script src="js/bookshop-main.js"></script>
+</body>
+
 </html>
